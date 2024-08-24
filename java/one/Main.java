@@ -1,7 +1,7 @@
 package one;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -25,12 +25,28 @@ public class Main {
         window.setLocationRelativeTo(null);
 
         // Define o ícone para o JFrame
-        window.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Aluno\\IdeaProjects\\rooling\\src\\main\\java\\img\\img.png")) ; // Corrigido para usar 'window'
+        window.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\main\\java\\img\\img.png")) ; // Corrigido para usar 'window'
 
         ///n mudar tamanho de tela
         window.setResizable(false);
 
+        //layout
+        window.setLayout(null);
+
+        //estanciar butao
+        JButton button = new JButton();
+
+        //texto no butao
+        button.setText("ajuda");
+
+        //adicionar butoa
+        window.add(button);
+
+        //onde vai tar o butao
+        button.setBounds(10, 10, 100,50);
+
         // Torna a janela visível
         window.setVisible(true);
+
     }
 }
