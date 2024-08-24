@@ -9,6 +9,9 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+
+
+
         // Cria uma instância do JFrame
         JFrame window = new JFrame("Rooling");
 
@@ -43,10 +46,45 @@ public class Main {
         window.add(button);
 
         //onde vai tar o butao
-        button.setBounds(10, 10, 100,50);
+        button.setBounds(10, 10, 150,100);
+
+        //mudar a cor do butao
+        button.setBackground(new Color(0x874BDB));
+
+        //mudar cor do texto do butao
+        button.setForeground(Color.WHITE);
+
+        //mudar fonte do texto od butao ou texto normal
+        button.setFont(new Font("Arial", Font.PLAIN, 30));
+
+        addButa(window);
 
         // Torna a janela visível
         window.setVisible(true);
+    }
+    public static void addButa(JFrame window){
+        JButton buta = new JButton();
+
+        //texto no butao
+        buta.setText("miakhalifa");
+
+        //adicionar butoa
+
+
+        //onde vai tar o butao
+        buta.setBounds(10, 150, 150,100);
+
+        //mudar a cor do butao
+        buta.setBackground(new Color(0x874BDB));
+
+        //mudar cor do texto do butao
+        buta.setForeground(Color.WHITE);
+
+        //mudar fonte do texto od butao ou texto normal
+        buta.setFont(new Font("Arial", Font.PLAIN, 30));
+
+        window.add(buta);
 
     }
+
 }
