@@ -1,90 +1,82 @@
 package one;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        // Cria a janela principal com configurações padrão
+        JFrame window = createWindow();
 
+        // Adiciona o primeiro botão à janela com o texto "ajuda" na posição (10, 10)
+        addButton(window, "ajuda", 10, 10);
 
+        // Adiciona o segundo botão à janela com o texto "miakhalifa" na posição (10, 150)
+        addButton(window, "miakhalifa", 10, 150);
 
-        // Cria uma instância do JFrame
-        JFrame window = new JFrame("Rooling");
-
-        // Define o comportamento ao fechar a janela
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Define o tamanho da janela
-        window.setSize(new Dimension(1200, 750));
-
-        // Define a cor de fundo da janela
-        window.getContentPane().setBackground(Color.pink);
-
-        ///centralizar
-        window.setLocationRelativeTo(null);
-
-        // Define o ícone para o JFrame
-        window.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\main\\java\\img\\img.png")) ; // Corrigido para usar 'window'
-
-        ///n mudar tamanho de tela
-        window.setResizable(false);
-
-        //layout
-        window.setLayout(null);
-
-        //estanciar butao
-        JButton button = new JButton();
-
-        //texto no butao
-        button.setText("ajuda");
-
-        //adicionar butoa
-        window.add(button);
-
-        //onde vai tar o butao
-        button.setBounds(10, 10, 150,100);
-
-        //mudar a cor do butao
-        button.setBackground(new Color(0x874BDB));
-
-        //mudar cor do texto do butao
-        button.setForeground(Color.WHITE);
-
-        //mudar fonte do texto od butao ou texto normal
-        button.setFont(new Font("Arial", Font.PLAIN, 30));
-
-        addButa(window);
-
-        // Torna a janela visível
+        // Torna a janela visível para o usuário
         window.setVisible(true);
     }
-    public static void addButa(JFrame window){
-        JButton buta = new JButton();
 
-        //texto no butao
-        buta.setText("miakhalifa");
+    /**
+     * Cria e configura a janela principal da aplicação.
+     * @return a instância configurada de JFrame.
+     */
+    private static JFrame createWindow() {
+        // Cria uma nova instância de JFrame com o título "Rooling"
+        JFrame window = new JFrame("Rooling");
 
-        //adicionar butoa
+        // Define o comportamento ao fechar a janela para terminar a aplicação
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Define o tamanho da janela como 1200 pixels de largura e 750 pixels de altura
+        window.setSize(new Dimension(1200, 750));
 
-        //onde vai tar o butao
-        buta.setBounds(10, 150, 150,100);
+        // Define a cor de fundo da janela como rosa
+        window.getContentPane().setBackground(Color.pink);
 
-        //mudar a cor do butao
-        buta.setBackground(new Color(0x874BDB));
+        // Centraliza a janela na tela do usuário
+        window.setLocationRelativeTo(null);
 
-        //mudar cor do texto do butao
-        buta.setForeground(Color.WHITE);
+        // Define o ícone da janela, usando a imagem especificada no caminho fornecido
+        window.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\main\\java\\img\\img.png"));
 
-        //mudar fonte do texto od butao ou texto normal
-        buta.setFont(new Font("Arial", Font.PLAIN, 30));
+        // Impede que o usuário redimensione a janela
+        window.setResizable(false);
 
-        window.add(buta);
+        // Define o layout da janela como nulo para posicionamento absoluto dos componentes
+        window.setLayout(null);
 
+        return window; // Retorna a instância configurada de JFrame
     }
 
+    /**
+     * Adiciona um botão à janela com as configurações especificadas.
+     * @param window a janela onde o botão será adicionado.
+     * @param text o texto a ser exibido no botão.
+     * @param x a posição horizontal do botão na janela.
+     * @param y a posição vertical do botão na janela.
+     */
+    private static void addButton(JFrame window, String text, int x, int y) {
+        // Cria uma nova instância de JButton
+        JButton button = new JButton();
+
+        // Define o texto exibido no botão
+        button.setText(text);
+
+        // Define a posição e o tamanho do botão: 150x100 pixels na posição (x, y)
+        button.setBounds(x, y, 150, 100);
+
+        // Define a cor de fundo do botão
+        button.setBackground(new Color(0x874BDB));
+
+        // Define a cor do texto do botão
+        button.setForeground(Color.WHITE);
+
+        // Define a fonte e o tamanho do texto no botão
+        button.setFont(new Font("Arial", Font.PLAIN, 30));
+
+        // Adiciona o botão à janela
+        window.add(button);
+    }
 }
