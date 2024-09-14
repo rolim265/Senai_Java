@@ -1,0 +1,57 @@
+use cousejdbc;
+CREATE TABLE departamento (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Nome varchar(60) DEFAULT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE vendedor (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Nome varchar(60) NOT NULL,
+  Email varchar(100) NOT NULL,
+  Aniversario date NOT NULL,
+  SalarioBase double NOT NULL,
+  DepartamentoId int(11) NOT NULL,
+  PRIMARY KEY (Id),
+  FOREIGN KEY (DepartamentoId) REFERENCES departamento (id)
+);
+
+INSERT INTO departamento (Nome) VALUES 
+  ('Higiene'),
+  ('Pet'),
+  ('Mercearia'),
+  ('Eletronicos');
+
+INSERT INTO vendedor (Nome, Email, Aniversario, SalarioBase, DepartamentoId) VALUES 
+('Leonardo DiCaprio','leo@gmail.com','1974-11-11',1500,1),
+('Angelina Jolie','angelina@gmail.com','1975-06-04',2000,2),
+('Tom Hanks','tom@gmail.com','1956-07-09',2500,3),
+('Meryl Streep','meryl@gmail.com','1949-06-22',1800,4),
+('Robert Downey Jr.','robert@gmail.com','1965-04-04',3000,1),
+('Scarlett Johansson','scarlett@gmail.com','1984-11-22',2200,2),
+('Brad Pitt','brad@gmail.com','1963-12-18',2700,3),
+('Jennifer Lawrence','jennifer@gmail.com','1990-08-15',1600,4),
+('Johnny Depp','johnny@gmail.com','1963-06-09',2900,1),
+('Harrison Ford','harrison@gmail.com','1942-07-13',2300,2),
+('Natalie Portman','natalie@gmail.com','1981-06-09',2100,3),
+('Will Smith','will@gmail.com','1968-09-25',2800,4),
+('Cate Blanchett','cate@gmail.com','1969-05-14',1900,1),
+('Matt Damon','matt@gmail.com','1970-10-08',2400,2),
+('Emma Stone','emma@gmail.com','1988-11-06',2000,3),
+('George Clooney','george@gmail.com','1961-05-06',2600,4),
+('Ryan Reynolds','ryan@gmail.com','1976-10-23',2500,1),
+('Julia Roberts','julia@gmail.com','1967-10-28',2200,2),
+('Denzel Washington','denzel@gmail.com','1954-12-28',2700,3),
+('Chris Hemsworth','chris@gmail.com','1983-08-11',3000,4),
+('Sandra Bullock','sandra@gmail.com','1964-07-26',2100,1),
+('Tom Cruise','tomcruise@gmail.com','1962-07-03',2900,2),
+('Charlize Theron','charlize@gmail.com','1975-08-07',1800,3),
+('Keanu Reeves','keanu@gmail.com','1964-09-02',2600,4),
+('Emma Watson','emmawatson@gmail.com','1990-04-15',2300,1),
+('Jason Momoa','jason@gmail.com','1979-08-01',2700,2),
+('Margot Robbie','margot@gmail.com','1990-07-02',2200,3),
+('Ben Affleck','ben@gmail.com','1972-08-15',2500,4),
+('Zoë Kravitz','zoe@gmail.com','1988-12-01',2000,1),
+('Michael Fassbender','michael@gmail.com','1977-04-02',2400,2),
+('Gal Gadot','gal@gmail.com','1985-04-30',2900,3),
+('Ryan Gosling','ryan_gosling@gmail.com','1980-11-12',2600,4);
